@@ -3,6 +3,19 @@ Projeto para a aula de Técnica de programação para games
 
 Changelog:
 
+Versão 6.1.0
+
+changes:
+- novos prefabs de plataformas
+- organização dos objetos na scene hierarchy
+- alteração no tamanho da altura da tela
+- pequena mudança de posicionamento da camera
+- aumento de velocidade do prefab de tiro "Pá"
+- alterado o script do "Trigger Enemy" - IMPORTANTE - Os inimigos foram separados por grupos. Cada grupo de inimigo deve ser adicionado ao "filho" do objeto Trigger Enemy. Isso é necessário pois agora o script procura apenas os inimigos que são filhos desse objeto. Ao contrário do modelo anterior, onde o script buscava todos os inimigos da tela.
+- Reposicionado vários objetos na tela e adicionado algumas plataformas móveis na tela
+
+____________________________________________________________________________________________________
+
 Versão 6.08 
 
 Inclusão de Tiro do Inimigo:
