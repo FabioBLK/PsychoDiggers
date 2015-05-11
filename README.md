@@ -1,7 +1,15 @@
-# PsychoDiggers
+﻿# PsychoDiggers
 Projeto para a aula de Técnica de programação para games
 
 Changelog:
+
+Versão 6.1.2
+
+- Criação de Checkpoints na tela. Após passar por um checkpoint, a tela será sempre reiniciada nesse último ponto.
+- Estrutura da tela modificada.
+- Tela finalizada.
+
+____________________________________________________________________________________________________
 
 Versão 6.1.0
 

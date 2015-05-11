@@ -42,7 +42,7 @@ public class Controller_Shovel : MonoBehaviour {
 		GameObject shovelDirection = GameObject.FindGameObjectWithTag("Player");
 		direction = shovelDirection.transform.localScale.x;
 		this.rigidbody2D.AddForce(new Vector2(100 * velocityShovel * direction  ,0));
-		print (shovelDirection.transform.localScale);
+		//print (shovelDirection.transform.localScale);
 	}
 	
 	// Update is called once per frame

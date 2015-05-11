@@ -33,6 +33,7 @@ public class ControlTriggerEnemy : MonoBehaviour {
 			foreach(EnemyController awakeEnemy in awakeEnemies){
 				//awakeEnemy.GetComponent<EnemyController>().EnemyAwake(triggerFlag);
 				awakeEnemy.EnemyAwake (triggerFlag);
+				//print (awakeEnemy);
 			}
 			
 			 

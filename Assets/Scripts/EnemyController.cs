@@ -53,12 +53,14 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
-		posXSkull = transform.localScale.x * offsetSkull;
-		
+		//print (offsetSkull);
 		//playerDirection = targetPlayer.GetComponent<Digger1Controller>().direction; // saber em qual direçao o player esta;
 		playerDirection = target.localScale.x; // saber em qual direçao o player esta;
+	
+		SincScalePlayer();
 		
+		posXSkull = transform.localScale.x * offsetSkull;
+					
 		colliding = Physics2D.Linecast (sightStart.position,sightEnd.position, detectPlatform); // se colidir com plataforma entao true entao salta plataforma
 		collidingShoot = Physics2D.Linecast(sightShootAim.position,sightShootTarget.position,detectPlayer) ; // se colidir com player entao true para atirar
 		
@@ -66,7 +68,7 @@ public class EnemyController : MonoBehaviour {
 		Debug.DrawLine (sightStart.position,sightEnd.position,Color.magenta);
 		Debug.DrawLine (sightShootAim.position,sightShootTarget.position,Color.red);
 
-		SincScalePlayer();
+		
 		
 		if (awakeEnemy == triggerEnemy) {
 		
@@ -151,7 +153,7 @@ public class EnemyController : MonoBehaviour {
 
 	void SincScalePlayer(){
 	
-		if (playerDirection > 0 && transform.position.x < target.position.x) { 
+		if (playerDirection > 0 && transform.position.x < target.position.x) {
 			transform.localScale = new Vector3 (1, 1, 1);
 		} else if (playerDirection < 0 && transform.position.x > target.position.x) {
 			transform.localScale = new Vector3 (-1, 1, 1);
