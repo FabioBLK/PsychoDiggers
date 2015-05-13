@@ -3,6 +3,13 @@ Projeto para a aula de Técnica de programação para games
 
 Changelog:
 
+Versão 6.1.3
+
+- Novo Prefab, versão 2, para o NecroAtiraParado.
+- Para efeitos de teste, desabilitado o tiro do Necro comum (aquele que anda)
+
+____________________________________________________________________________________________________
+
 Versão 6.1.2
 
 - Criação de Checkpoints na tela. Após passar por um checkpoint, a tela será sempre reiniciada nesse último ponto.

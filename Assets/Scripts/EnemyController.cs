@@ -114,8 +114,8 @@ public class EnemyController : MonoBehaviour {
 
 				
 				
-				Instantiate (skullShot,new Vector3(posSkullShotX,posSkullShotY,0),Quaternion.identity);
-				skullShot.transform.localScale = this.transform.localScale;
+				//Instantiate (skullShot,new Vector3(posSkullShotX,posSkullShotY,0),Quaternion.identity);
+				//skullShot.transform.localScale = this.transform.localScale;
 							
 			}
 			
