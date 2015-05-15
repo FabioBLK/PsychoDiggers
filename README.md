@@ -3,6 +3,13 @@ Projeto para a aula de Técnica de programação para games
 
 Changelog:
 
+Versão 6.1.4
+
+- Adicionada a nova tela no jogo (Fase 2 que na verdade é a Fase 1 :-P
+- Pequenos fixes nos scripts dos personagens. Havia um bug que não deixava o personagem invencivel após receber um ataque do inimigo.
+
+____________________________________________________________________________________________________
+
 Versão 6.1.3
 
 - Novo Prefab, versão 2, para o NecroAtiraParado.

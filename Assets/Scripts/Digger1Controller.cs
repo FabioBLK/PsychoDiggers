@@ -99,7 +99,7 @@ public class Digger1Controller : MonoBehaviour {
 			}
 			
 			//Troca de personagem ao pressionar a tecla " "
-			if (Input.GetKeyDown (KeyCode.C) && ground){
+			if (Input.GetKeyDown (KeyCode.C) && ground && diggerTimer>2.0f){
 				ChangePlayer();
 			}
 		}
@@ -183,7 +183,7 @@ public class Digger1Controller : MonoBehaviour {
 		digger1Anim.SetBool("Damage", false);
 		isDamaged = false;
 		rigidbody2D.gravityScale = 1;
-		gameObject.layer = 1;
+		//gameObject.layer = 0;
 		
 	}
 	

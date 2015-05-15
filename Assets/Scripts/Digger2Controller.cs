@@ -83,7 +83,7 @@ public class Digger2Controller : MonoBehaviour {
 			rb.velocity = diggerVelocity;
 			
 			//Troca de personagem ao pressionar a tecla " "
-			if (Input.GetKeyDown (KeyCode.C) && ground){
+			if (Input.GetKeyDown (KeyCode.C) && ground && diggerTimer>2.0f){
 				ChangePlayer();
 			}
 			
@@ -185,7 +185,7 @@ public class Digger2Controller : MonoBehaviour {
 		digger2Anim.SetBool("Damage", false);
 		isDamaged = false;
 		rigidbody2D.gravityScale = 1;
-		gameObject.layer = 1;
+		//gameObject.layer = 0;
 	}
 	
 	public void PauseDigger()
