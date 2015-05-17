@@ -3,6 +3,15 @@ Projeto para a aula de Técnica de programação para games
 
 Changelog:
 
+Versao 6.1.5
+
+-Correção de bugs:
+	- Adicionado um segundo GroundCheck nos 2 personagens, para evitar que eles ficassem "Flutuando" quando ficavam na beirada de uma plataforma.
+	- Alterado o método de troca de personagens, agora durante a troca de personagens, o novo player 2 é instanciado apontando para a mesma direção que o player 1 estava. 
+
+____________________________________________________________________________________________________
+
+
 Versão 6.1.4
 
 - Adicionada a nova tela no jogo (Fase 2 que na verdade é a Fase 1 :-P

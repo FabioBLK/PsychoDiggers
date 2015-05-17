@@ -23,7 +23,7 @@ public class Digger1Controller : MonoBehaviour {
 
 	//Jump Variables
 	bool ground = false;
-	public GameObject groundCheck;
+	public GameObject groundCheck,groundCheck2;
 	public float jumpPower=0;
 	
 	//Contator de tiros
@@ -109,7 +109,7 @@ public class Digger1Controller : MonoBehaviour {
 	void FixedUpdate(){
 		//====================GROUND CHECK===================
 		//checa a cada frame se o personagem esta ou nao no chao. E define o valor na variavel ground
-		ground = (Physics2D.Linecast (transform.position,groundCheck.transform.position,1 << LayerMask.NameToLayer("Plataforma")));
+		ground = (Physics2D.Linecast (transform.position,groundCheck.transform.position,1 << LayerMask.NameToLayer("Plataforma")) || Physics2D.Linecast (transform.position,groundCheck2.transform.position,1 << LayerMask.NameToLayer("Plataforma")));
 		 
 	}
 	
@@ -167,7 +167,9 @@ public class Digger1Controller : MonoBehaviour {
 	void ChangePlayer(){
 		
 		// Instancia o segundo player na tela / Chama o metodo da camera para que ela procure o segundo player / Destroi o player atual
-		Instantiate (digger2,transform.position,Quaternion.identity);
+		float scaleX=transform.localScale.x;
+		GameObject newDigger = Instantiate (digger2,transform.position,Quaternion.identity) as GameObject;
+		newDigger.transform.localScale=new Vector3(scaleX,1,1);
 		Instantiate (explosion, new Vector3(transform.position.x,transform.position.y-1,transform.position.z),Quaternion.identity);
 		cameraCall.ChangeToDigger2();
 		playerShadowCall.ChangeToDigger2();
