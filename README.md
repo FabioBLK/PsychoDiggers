@@ -3,6 +3,15 @@ Projeto para a aula de Técnica de programação para games
 
 Changelog:
 
+Versao 6.1.7
+
+- Adicionada Menu Inicial.
+- Incluido pasta Audio e Images.
+- Adicionado música de fundo nas fases (menu, fase 1, fase 2 e cena Boss)
+
+
+
+____________________________________________________________________________________________________
 Versao 6.1.6 
 
 - Adicionada a scene_boss:
