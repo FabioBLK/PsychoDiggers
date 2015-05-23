@@ -55,7 +55,7 @@ public class ShootingEnemyControl : MonoBehaviour {
 	*/
 	
 	void OnTriggerEnter2D(Collider2D col){
-		print (col.gameObject.tag);
+		//print (col.gameObject.tag);
 		if (col.gameObject.tag=="Shovel"){
 			health -= Controller_Shovel.weaponDamage;
 			//WeaponHit(true);

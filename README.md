@@ -3,6 +3,13 @@ Projeto para a aula de Técnica de programação para games
 
 Changelog:
 
+Versao 6.1.8
+
+- Adicionado um collider no final de cada uma das 2 fases que transiciona para a próxima tela.
+- Adicionada animações para os 2 players de vitória. Ao chegar no final da fase, essa animação é iniciada.
+
+____________________________________________________________________________________________________
+
 Versao 6.1.7
 
 - Adicionada Menu Inicial.

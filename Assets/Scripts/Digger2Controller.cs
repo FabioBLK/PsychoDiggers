@@ -202,6 +202,18 @@ public class Digger2Controller : MonoBehaviour {
 		//}
 	}
 	
+	public void PauseDiggerFinish(float tempo)
+	{
+		direction = 0;
+		diggerEnable = false;
+		diggerTimer = tempo;
+		//if (!isDamaged)
+		//{
+		rigidbody2D.velocity = new Vector2(0, 0);
+		//rigidbody2D.gravityScale = 0;
+		//}
+	}
+	
 	 void Damage()
 	{
 		PauseDigger();
