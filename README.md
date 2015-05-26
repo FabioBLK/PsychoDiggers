@@ -3,6 +3,15 @@ Projeto para a aula de Técnica de programação para games
 
 Changelog:
 
+Versao 6.1.9
+
+- Inserido Animação ao título no Game Menu inicial.
+- Corrigido Áudio da fase Boss.
+- Incluído opção de pausar o jogo.
+- Incluído opção de reiniciar a fase atual dentro do pause.
+
+____________________________________________________________________________________________________
+
 Versao 6.1.8
 
 - Adicionado um collider no final de cada uma das 2 fases que transiciona para a próxima tela. Um prefab chamado Finish Collider foi criado para esse objeto.
