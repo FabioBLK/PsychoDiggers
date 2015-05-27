@@ -33,6 +33,9 @@ public class Digger2Controller : MonoBehaviour {
 	//Stomp
 	public GameObject stomp;
 	
+	//sound
+	public AudioClip audioJump,audioGetHit,audioDie;
+	
 	
 	// Use this for initialization
 	void Start () {
@@ -120,6 +123,7 @@ public class Digger2Controller : MonoBehaviour {
 	
 	
 	void Jump(){
+		audio.PlayOneShot (audioJump);
 		//Adiciona força no eixo Y do personagem. Força do pulo definido na variavel JumpPower (Publica)
 		rigidbody2D.velocity = (Vector2.up*jumpPower);
 	}
@@ -216,6 +220,7 @@ public class Digger2Controller : MonoBehaviour {
 	
 	 void Damage()
 	{
+		audio.PlayOneShot (audioGetHit);
 		PauseDigger();
 		digger2Anim.SetBool("Damage", true);
 		isDamaged = true;
@@ -285,6 +290,7 @@ public class Digger2Controller : MonoBehaviour {
 		//Essa funcao e' ativada pela animacao "DAMAGE"
 		LifeManager.playerLives -= 1;
 		if (LifeManager.playerLives < 0){
+			audio.PlayOneShot (audioDie);
 			digger2Anim.SetBool ("Die",true);
 		}
 	}

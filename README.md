@@ -3,6 +3,19 @@ Projeto para a aula de Técnica de programação para games
 
 Changelog:
 
+Versão 6.2.1
+
+Adicionado os seguintes sons:
+
+- Ao atirar a pá
+- Ao levar um dano
+- Ao atingir um inimigo
+- Ao morrer
+- Ao trocar de personagem
+- Ao pular
+
+____________________________________________________________________________________________________
+
 Versão 6.2
 
 - Boss fica invencível por 2 segundos após receber um hit.

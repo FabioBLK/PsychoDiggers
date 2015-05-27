@@ -8,6 +8,8 @@ public class ShootingEnemyControl : MonoBehaviour {
 	float playerXPos,necroXPos,xPos;
 	public int health=60;
 	
+	public AudioClip audioHit;
+	
 
 	
 	//Transform shootTrigger;
@@ -22,7 +24,7 @@ public class ShootingEnemyControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		
+
 		FaceDirection ();
 		
 		if (health<0){
@@ -57,17 +59,22 @@ public class ShootingEnemyControl : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 		//print (col.gameObject.tag);
 		if (col.gameObject.tag=="Shovel"){
+			audio.PlayOneShot (audioHit);
 			health -= Controller_Shovel.weaponDamage;
 			//WeaponHit(true);
 			//gameObject.GetComponent<EnemyHealth>().TakeDamage (Controller_Shovel.weaponDamage);
 		}
 		if (col.gameObject.tag == "Stomp"){
+			audio.PlayOneShot (audioHit);
 			health -= Digger2StompControl.stompDamage;
 			//WeaponHit(true);
 			//gameObject.GetComponent<EnemyHealth>().TakeDamage (Digger2StompControl.stompDamage);
 		}
 	}
 	
+	void OnDestroy(){
+		audio.PlayOneShot (audioHit);
+	}
 	
 	
 }

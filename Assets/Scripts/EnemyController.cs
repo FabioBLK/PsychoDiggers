@@ -35,6 +35,7 @@ public class EnemyController : MonoBehaviour {
 	
 	Animator anim;
 	
+	public AudioClip audioHit;
 	
 	// Use this for initialization
 	
@@ -200,10 +201,12 @@ public class EnemyController : MonoBehaviour {
 		if (col.gameObject.tag=="Shovel"){
 			WeaponHit(true);
 			gameObject.GetComponent<EnemyHealth>().TakeDamage (Controller_Shovel.weaponDamage);
+			audio.PlayOneShot (audioHit);
 		}
 		if (col.gameObject.tag == "Stomp"){
 			WeaponHit(true);
 			gameObject.GetComponent<EnemyHealth>().TakeDamage (Digger2StompControl.stompDamage);
+			audio.PlayOneShot (audioHit);
 		}
 	}
 	

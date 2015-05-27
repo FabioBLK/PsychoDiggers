@@ -8,6 +8,7 @@ public class Controller_Shovel : MonoBehaviour {
 	public float velocityShovel;
 	private float direction;
 	public static int weaponDamage = 20;
+	//public AudioClip audioHitEnemy;
 
 
 	void OnTriggerEnter2D(Collider2D other)
