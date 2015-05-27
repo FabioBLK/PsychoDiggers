@@ -33,12 +33,13 @@ public class ControlTriggerBoss : MonoBehaviour {
 			
 				Debug.Log (awakeEnemy);		
 				awakeEnemy.EnemyAwake (triggerFlag);
+				//Destroy (this.gameObject);
+				gameObject.collider2D.enabled= false;
 			
 			}
 			
 			
-			//Destroy (this.gameObject);
-			gameObject.collider2D.enabled= false;
+
 			
 		}
 	}

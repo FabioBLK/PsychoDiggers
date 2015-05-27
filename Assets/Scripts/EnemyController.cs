@@ -30,9 +30,8 @@ public class EnemyController : MonoBehaviour {
 	float posSkullShotX;
 	float posSkullShotY;
 
-	
-	
-	
+	float necroXPos,playerXPos,xPos;
+	//GameObject playerPosition;
 	
 	Animator anim;
 	
@@ -81,6 +80,7 @@ public class EnemyController : MonoBehaviour {
 				//this.transform.Translate (-1 * Time.deltaTime,0,0); // pode ser deletado substituido por MoveTowards
 			
 				this.transform.position = Vector3.MoveTowards (this.transform.position, target.position, speedEnemy * Time.deltaTime); // posiçao do player, posiçao do inimigo, velocidade escalar do inimigo
+				//this.transform.position = Vector3.MoveTowards (this.transform.position, target.position, speedEnemy/100); // posiçao do player, posiçao do inimigo, velocidade escalar do inimigo
 			
 				//===========Acompanha os movimentos do Player e Troca o localScale de acordo com o Scale do Player
 				// se jogar estiver indo em direçao ao inimigo a frente, LocalScale -1 em relaçao ao player
@@ -152,13 +152,28 @@ public class EnemyController : MonoBehaviour {
 
 
 	void SincScalePlayer(){
-	
+		/*
 		if (playerDirection > 0 && transform.position.x < target.position.x) {
 			transform.localScale = new Vector3 (1, 1, 1);
-		} else if (playerDirection < 0 && transform.position.x > target.position.x) {
+		}
+		if (playerDirection < 0 && transform.position.x > target.position.x) {
 			transform.localScale = new Vector3 (-1, 1, 1);
 		}
-	
+		*/
+		
+		{
+			necroXPos = transform.position.x;
+			playerXPos = targetPlayer.transform.position.x;
+			if (necroXPos <= playerXPos) {
+				xPos = 1;
+			}
+			if (necroXPos > playerXPos) {
+				xPos = -1;
+			}
+			transform.localScale = new Vector3 (xPos, 1, 1);
+		}
+		
+		
 	}
 	
 	

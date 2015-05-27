@@ -1,7 +1,20 @@
-# PsychoDiggers
+﻿# PsychoDiggers
 Projeto para a aula de Técnica de programação para games
 
 Changelog:
+
+Versão 6.2
+
+- Boss fica invencível por 2 segundos após receber um hit.
+- Boss atira o prefab de tiro (2 tipos randomicos criados anteriormente).
+- Após matar o boss, um trigger de troca de telas é ativado.
+- Alteração no método SyncPlayer no script NecroController para resolver o problema do necro andar de costas (Mesmo após a última alteração no domingo, alguns necros continuavam andando de costas).
+- Alterações na tela 01 - Adicionado colliders "Destruidores no topo da tela.
+- Alterações na tela 02 - Adicionado colliders "Destruidores no topo da tela e alteração na posição e velocidade de alguns inimigos.
+- Alterado os backgrounds nas telas 01 e na tela boss.
+- Alterado o script do BossShoot. Ao iniciar o tiro do boss, o collider é um pouco maior no eixo Y, isso evita que o jogador fique infinitamente pulando na cabeça do boss para mata-lo.
+
+____________________________________________________________________________________________________
 
 Versao 6.1.9
 

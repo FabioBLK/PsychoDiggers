@@ -17,6 +17,14 @@ public class ControllerBoss : MonoBehaviour {
 	float speedEnemy;
 	public float maxSpeed;
 	
+	bool triggerEnabled=true;
+	Vector4 bossRender1 = new Vector4(1,1,1,1);
+	Vector4 bossRender2 = new Vector4(1,1,1,0);
+	SpriteRenderer bossRender;
+	float bossTime;
+	float shootTime;
+	public GameObject bossShot;
+	public GameObject finishTrigger;
 	
 	Animator necroAnim;
 
@@ -29,12 +37,26 @@ public class ControllerBoss : MonoBehaviour {
 	    targetPlayer = GameObject.FindObjectOfType<PlayerShadowControl>().gameObject;
 	    target = targetPlayer.transform;  
 		necroAnim = GetComponent<Animator> ();
-		
+		bossRender = GetComponent<SpriteRenderer>();
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
+		bossTime += Time.deltaTime;
+		shootTime += Time.deltaTime;
+		
+		SetInvencibility ();
+		
+		if (bossTime>2){
+			triggerEnabled = true;
+		}
+		
+		if (shootTime > 2){
+			shootTime=0;
+			GameObject shoot = Instantiate(bossShot,transform.position,Quaternion.identity)as GameObject;
+		}
 	
 		speedEnemy = Mathf.Clamp ( speedEnemy + Time.deltaTime,0f,maxSpeed);
 	
@@ -106,15 +128,22 @@ public class ControllerBoss : MonoBehaviour {
 		
 
 	void OnTriggerEnter2D(Collider2D col){
-		if (col.gameObject.tag=="Shovel"){
-			WeaponHit(true);
-			gameObject.GetComponent<EnemyHealth>().TakeDamage (Controller_Shovel.weaponDamage);
-			speedEnemy = 0;
-			
-		}
-		if (col.gameObject.tag == "Stomp"){
-			WeaponHit(true);
-			gameObject.GetComponent<EnemyHealth>().TakeDamage (Digger2StompControl.stompDamage);
+		if (triggerEnabled){
+			if (col.gameObject.tag=="Shovel"){
+				WeaponHit(true);
+				gameObject.GetComponent<EnemyHealth>().TakeDamage (Controller_Shovel.weaponDamage);
+				speedEnemy = 0;
+				bossTime = 0.0f;
+				print ("Boss HIT");
+				
+			}
+			if (col.gameObject.tag == "Stomp"){
+				WeaponHit(true);
+				gameObject.GetComponent<EnemyHealth>().TakeDamage (Digger2StompControl.stompDamage);
+				speedEnemy = 0;
+				bossTime = 0.0f;
+				print ("Boss HIT");
+			}
 		}
 	}
 	
@@ -133,5 +162,38 @@ public class ControllerBoss : MonoBehaviour {
 	
 	
 	}
+	
+	void BlinkBoss(){
+		if (bossRender.color.a == 0){
+			bossRender.color = bossRender1;
+			return;
+		}
+		if (bossRender.color.a == 1){
+			bossRender.color = bossRender2;
+			return;
+		} 
+	}
+	
+	void SetInvencibility ()
+	{
+		//Define se o personagem fica "invencivel" enquanto a variavel timer for menor que 2 (Por exemplo, ao ser atingido).
+		
+		if (bossTime < 2.0f) {
+			triggerEnabled = false;
+			BlinkBoss ();
+		}
+		else {
+			//gameObject.layer = 0;
+			bossRender.color = bossRender1;
+		}
+	}
+	
+	void OnDestroy(){
+		
+		if (finishTrigger != null){
+			finishTrigger.SetActive(true);
+		}
+	}
+	
 	
 }
