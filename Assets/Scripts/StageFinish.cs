@@ -38,6 +38,7 @@ public class StageFinish : MonoBehaviour {
 			digger.PauseDiggerFinish(-10);
 			finish = true;
 			PlayerPrefs.SetInt("CheckPoint",0);
+			PlayerPrefs.SetInt("ThisScore",ScoreManager.scorePlayer);
 		}
 		
 		
@@ -49,6 +50,7 @@ public class StageFinish : MonoBehaviour {
 			digger.PauseDiggerFinish(-10);
 			finish=true;
 			PlayerPrefs.SetInt("CheckPoint",0);
+			PlayerPrefs.SetInt("ThisScore",ScoreManager.scorePlayer);
 		}
 	}
 	

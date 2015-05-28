@@ -52,6 +52,9 @@ public class Digger2Controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Time.timeScale < 0.001f)
+			return;
 		
 		//print (stomp.collider2D.enabled);
 		
@@ -291,6 +294,7 @@ public class Digger2Controller : MonoBehaviour {
 		LifeManager.playerLives -= 1;
 		if (LifeManager.playerLives < 0){
 			audio.PlayOneShot (audioDie);
+			PlayerPrefs.SetInt("ThisScore",0);
 			digger2Anim.SetBool ("Die",true);
 		}
 	}

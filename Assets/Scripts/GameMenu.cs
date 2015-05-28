@@ -18,6 +18,7 @@ public class GameMenu : MonoBehaviour {
 	public void BotaoStart(){
 		PlayerPrefs.SetInt("CheckPoint",0);
 		Application.LoadLevel ("scene_fase02");
+		PlayerPrefs.SetInt ("ThisScore", 0);
 
 
 

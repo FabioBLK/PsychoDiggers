@@ -7,6 +7,7 @@ public class ShootingEnemyControl : MonoBehaviour {
 	GameObject playerPosition;
 	float playerXPos,necroXPos,xPos;
 	public int health=60;
+	public int scoreValue = 10;
 	
 	public AudioClip audioHit;
 	
@@ -73,6 +74,7 @@ public class ShootingEnemyControl : MonoBehaviour {
 	}
 	
 	void OnDestroy(){
+		ScoreManager.scorePlayer += scoreValue;
 		audio.PlayOneShot (audioHit);
 	}
 	
