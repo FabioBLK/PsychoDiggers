@@ -17,6 +17,7 @@ public class ShootingEnemyControl : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		
 		necroAnim = GetComponent<Animator>();
 		playerPosition = GameObject.Find ("PlayerShadow");
 		//shootTrigger = transform.FindChild ("ShootTrigger");

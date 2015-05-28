@@ -27,4 +27,5 @@ public class GameMenu : MonoBehaviour {
 	public void BotaoQuit(){
 		Application.Quit ();
 	}
+	
 }

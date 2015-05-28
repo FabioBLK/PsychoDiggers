@@ -3,6 +3,13 @@ Projeto para a aula de Técnica de programação para games
 
 Changelog:
 
+
+Versao 6.2.3
+
+- Tela de Ranking completa
+
+____________________________________________________________________________________________________
+
 Versão 6.2.2
 
 - Corrigido bug do menu
