@@ -3,6 +3,16 @@ Projeto para a aula de Técnica de programação para games
 
 Changelog:
 
+Versão 6.2.4
+
+Mudanças no input:
+
+- Controle do XBox 360. Botões utilizados, "A", "X" e "B". Representam Pulo, Tiro e Troca de personagem respectivamente.
+- No teclado o botão de troca de personagens foi alterado, de "C" para "Alt Esquerdo"
+
+
+____________________________________________________________________________________________________
+
 
 Versao 6.2.3
 
@@ -15,6 +25,7 @@ Versão 6.2.2
 - Corrigido bug do menu
 - Corrigido score na tela
 - iniciado tela de Ranking (Não finalizada)
+
 ____________________________________________________________________________________________________
 
 

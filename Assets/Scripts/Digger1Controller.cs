@@ -103,7 +103,8 @@ public class Digger1Controller : MonoBehaviour {
 			}
 			
 			//Troca de personagem ao pressionar a tecla " "
-			if (Input.GetKeyDown (KeyCode.C) && ground && diggerTimer>2.0f){
+			//if (Input.GetKeyDown (KeyCode.C) && ground && diggerTimer>2.0f){
+			if (Input.GetButtonDown("Fire2") && ground && diggerTimer>2.0f){
 				ChangePlayer();
 			}
 		}
