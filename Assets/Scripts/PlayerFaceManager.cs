@@ -8,9 +8,9 @@ public Sprite[] playerFaceSprite = new Sprite[2];
 public Image imageSource;
 
 	// Use this for initialization
-	void Awake () {
+	void Start () {
 	imageSource = GetComponent<Image>();
-	imageSource.sprite = playerFaceSprite[0];
+	imageSource.sprite = playerFaceSprite[iFace];
 	
 	}
 	

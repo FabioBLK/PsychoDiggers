@@ -3,6 +3,16 @@ Projeto para a aula de Técnica de programação para games
 
 Changelog:
 
+Versão 6.2.5
+
+Correção de bugs
+- Modificado o script do inimigo que atira. Os tiros estavam "sendo transportados" se o inimigo virasse para o lado oposto buscando o player.
+- Ao morrer com o Digger2, o o desenho do rosto do digger volta para o Digger1
+- Modificado o prefab da explosão. O prefab não saia da cena após a troca, criando assim vários objetos que nunca desapareciam.
+- Adicionado sons ao chefe que estavam faltando
+
+____________________________________________________________________________________________________
+
 Versão 6.2.4
 
 Mudanças no input:

@@ -76,7 +76,7 @@ public class ShootingEnemyControl : MonoBehaviour {
 	
 	void OnDestroy(){
 		ScoreManager.scorePlayer += scoreValue;
-		audio.PlayOneShot (audioHit);
+		AudioSource.PlayClipAtPoint (audioHit,transform.position);
 	}
 	
 	

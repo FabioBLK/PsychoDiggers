@@ -28,6 +28,8 @@ public class ControllerBoss : MonoBehaviour {
 	
 	Animator necroAnim;
 
+	public AudioClip audioHit,audioDie,audioShot;
+
 
 	// Use this for initialization
 
@@ -55,6 +57,7 @@ public class ControllerBoss : MonoBehaviour {
 		
 		if (shootTime > 2){
 			shootTime=0;
+			audio.PlayOneShot (audioShot);
 			GameObject shoot = Instantiate(bossShot,transform.position,Quaternion.identity)as GameObject;
 		}
 	
@@ -134,6 +137,7 @@ public class ControllerBoss : MonoBehaviour {
 				gameObject.GetComponent<EnemyHealth>().TakeDamage (Controller_Shovel.weaponDamage);
 				speedEnemy = 0;
 				bossTime = 0.0f;
+				audio.PlayOneShot (audioHit);
 				print ("Boss HIT");
 				
 			}
@@ -142,6 +146,7 @@ public class ControllerBoss : MonoBehaviour {
 				gameObject.GetComponent<EnemyHealth>().TakeDamage (Digger2StompControl.stompDamage);
 				speedEnemy = 0;
 				bossTime = 0.0f;
+				audio.PlayOneShot (audioHit);
 				print ("Boss HIT");
 			}
 		}
@@ -189,7 +194,7 @@ public class ControllerBoss : MonoBehaviour {
 	}
 	
 	void OnDestroy(){
-		
+		AudioSource.PlayClipAtPoint (audioDie,transform.position);
 		if (finishTrigger != null){
 			finishTrigger.SetActive(true);
 		}

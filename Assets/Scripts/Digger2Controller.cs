@@ -297,6 +297,7 @@ public class Digger2Controller : MonoBehaviour {
 			audio.PlayOneShot (audioDie);
 			PlayerPrefs.SetInt("ThisScore",0);
 			digger2Anim.SetBool ("Die",true);
+			PlayerFaceManager.iFace = 0;
 		}
 	}
 }
